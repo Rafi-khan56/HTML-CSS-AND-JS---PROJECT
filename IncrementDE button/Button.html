@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Increment/Decrement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #f4f4f4;
+    }
+
+    #counter {
+      font-size: 48px;
+      margin: 20px;
+      color: #333;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #increment {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #increment:hover {
+      background-color: #45a049;
+    }
+
+    #decrement {
+      background-color: #f44336;
+      color: white;
+    }
+
+    #decrement:hover {
+      background-color: #da190b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Counter</h1>
+  <div id="counter">0</div>
+  <button id="increment" onclick="increment()">Increment</button>
+  <button id="decrement" onclick="decrement()">Decrement</button>
+  <button id="increment" onclick="reset()">Reset</button>
+
+  <script>
+    let count = 0;
+          
+    function increment()
+    {
+        count++;
+        document.getElementById("counter").textContent = count;
+    }
+
+    function decrement()
+    {
+        count--;
+        document.getElementById("counter").textContent = count;
+    }
+
+    function reset()
+    {
+        count = 0;
+        document.getElementById("counter").textContent = count;
+    }
+  </script>
+
+</body>
+</html>
