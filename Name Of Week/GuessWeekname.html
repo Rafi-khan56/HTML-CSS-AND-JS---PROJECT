@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week name</title>
+</head>
+<body>
+     <h1>ENTER NUMBER GET DAY NAME</h1>
+        <h3 id="name"></h3>
+
+        <script>
+            let weeknum = prompt("Enter a number between 1 to 7 to get the name of the week:");
+
+            switch(weeknum)
+            {
+                case '1':
+                    document.getElementById("name").textContent = "Monday";
+                    break;
+                case '2':
+                    document.getElementById("name").textContent = "Tuesday";
+                    break;
+                case '3':
+                    document.getElementById("name").textContent = "Wednesday";
+                    break;
+                case '4':
+                    document.getElementById("name").textContent = "Thursday";
+                    break;
+                case '5':
+                    document.getElementById("name").textContent = "Friday";
+                    break;
+                case '6':
+                    document.getElementById("name").textContent = "Staturday";
+                    break;
+                case '7':
+                    document.getElementById("name").textContent = "Sunday";
+                    break;
+
+                    default: 
+                    {
+                        document.getElementById("name").textContent = "please enter a numbers between 1 to 7";
+                    }
+
+            }
+        </script>
+</body>
+</html>
