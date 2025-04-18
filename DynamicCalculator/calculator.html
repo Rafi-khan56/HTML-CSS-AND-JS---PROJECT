@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .calculator {
+            background-color: antiquewhite;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .calculator button {
+            border: none;
+            outline: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            box-shadow: -4px -2px 8px;
+            font-size: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="hh">Rafi Ullah</h1>
+    <div class="main">
+        <div class="calculator">
+
+            <div class="display">
+                <input type="text" readonly id="display" style="width: 315px; height: 50px;">
+            </div>
+
+            <div>
+                <button onclick="AllClear()">AC</button>
+                <button onclick="deleteLast()">DEL</button>
+                <button onclick="independ('.')">.</button>
+                <button onclick="independ('/')">/</button>
+            </div>
+
+
+            <div>
+                <button onclick="independ('7')">7</button>
+                <button onclick="independ('8')">8</button>
+                <button onclick="independ('9')">9</button>
+                <button onclick="independ('*') ">*</button>
+            </div>
+
+            <div>
+                <button onclick="independ('4')">4</button>
+                <button onclick="independ('5')">5</button>
+                <button onclick="independ('6')">6</button>
+                <button>-</button>
+            </div>
+
+            <div>
+                <button onclick="independ('1')">1</button>
+                <button onclick="independ('2')">2</button>
+                <button onclick="independ('3')">3</button>
+                <button onclick="independ('+')">+</button>
+            </div>
+
+
+            <div>
+                <button onclick="independ('00')">00 </button>
+                <button onclick="independ('0')">0</button>
+                <button style="width: 145px;"  onclick="calculate()">=</button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById("display");
+
+        function independ(value) {
+            display.value += value;
+        }
+
+        function AllClear() {
+            display.value = " ";
+        }
+
+        function deleteLast() {
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculate()
+        { 
+            try {
+                display.value = eval(display.value);
+            }
+              catch (error){
+                display.value = "Error";
+              }
+        }
+    </script>
+</body>
+
+</html>
