@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Name</title>
+    <style>
+        *{margin: 0px;  padding: 0px;  box-sizing: 0px; }
+          body {width: 80%; height: 70%; }
+
+          h1 {display: flex;  justify-content: center;  font-family: sans-serif;  text-align: center;}
+        .main {width: 400px; height: 80%; background-color:burlywood;    margin-left: 40%;}
+
+       .sub { position: absolute;    margin-left: 35%;}
+      
+          
+    </style>
+</head>
+<body>
+       <h1> Join your Name </h1>
+       <hr>
+ <br>
+
+        <div class="main">
+           <form   id="sub"> 
+             <label for="First Name" >First Name <input type="text" name="name" placeholder="First Name" id="first"></label> <br><br>
+             <label for="Last Name"> Last Name <input type="text" name="name"  placeholder="Last Name"    id="last"></label> <br><br> 
+       </form>
+
+       <button onclick="fullname()">  join your name! </button>
+
+              <h1 id="result"> ..........  </h1>
+            </div>
+<div class="sub"> 
+        <br> <br><br>
+          <input type="email" name="email" id="email" placeholder="Entre email"> <input type="submit" name="submit" onclick="Email()" >
+         <br><br><br>
+          <input type="password" name="password" id="password" placeholder="password"> <input type="submit" name="submit" onclick="Password()" >
+
+        </div>
+
+         <script>
+ 
+  function Email()
+  {
+    var user = document.getElementById("email").value;
+    user.match("@gmail.com")? window.alert("Email Success") :  window.alert("Email Not Success");
+  }
+
+  function Password ()
+  {
+    var num = /[1-9]/g;
+    var upper = /[A-Z]/g;
+    // var lower = /[a-z]/g;
+    // var special = /[@#$%^&*]/g;
+    var pass = document.getElementById("password").value;
+    pass.match(num) && pass.match(upper)&& pass.match(lower)&& pass.match(special)? window.alert("password success"): window.alert(" please use numder, uppercase, lowercase and special character" );
+  }
+
+
+
+                 function fullname()
+            {
+               var a = document.getElementById("first").value;
+               var c = document.getElementById("last").value;
+
+              var b =  document.getElementById("result");
+              b.innerHTML = a+" "+c;
+            }
+
+            
+            
+           
+
+         </script>
+       
+</body>
+</html>
