@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {height: 50px; width: 100%; background: teal;}
+        .main {list-style: none;}
+        .sub {list-style: none; display: none; position: absolute; left: -40px;}
+        .sub li {margin-top: 5px;}
+
+        .main li {float: left; position: relative;}
+        .main li a {text-decoration: none; background: teal; color: gold; height: 50px; 
+            width: 150px; display: block; text-align: center; line-height: 50px; font-family: verdana;}
+            
+        .main li a:hover {background: gold; color: teal;}
+        .main li:hover .sub {display: block;}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="main">
+                <li><a href="">HOME</a></li>
+                <li><a href="">TRAINING</a>
+                    <ul class="sub">
+                        <li><a href="">ANDROID</a></li>
+                        <li><a href="">WEB DEV</a></li>
+                        <li><a href="">GRAPHICS</a></li>
+                    </ul>
+                </li>
+                <li><a href="">CONTACT</a></li>
+                <li><a href="">SERVICES</a>
+                    <ul class="sub">
+                        <li><a href="">DEVELOPMENT</a></li>
+                        <li><a href="">DEPLOYMENT</a></li>
+                        <li><a href="">DESIGNING</a></li>
+                    </ul>
+                </li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">CAREER</a>
+                    <ul class="sub">
+                        <li><a href="">MANAGER</a></li>
+                        <li><a href="">TRAINER</a></li>
+                        <li><a href="">DRIVER</a></li>
+                    </ul>
+                </li>
+                <li><a href="">FAQ</a></li>
+
+            </header>
+    <section>
+        <article>
+
+        </article>
+    </section>
+    <aside>
+
+    </aside>
+    <footer>
+
+    </footer>
+</body>
+</html>
