@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            height: 80vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin: 5px;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #display {
+            display: none;
+        }
+
+        .output {
+            margin-top: 30px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .output h3 {
+            margin-bottom: 15px;
+        }
+
+        .output p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Personal Information</h2>
+        <form onsubmit=" return addDetail();">
+            <div class="form-group">
+                <label for="fullname">Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="fathername">Father Name:</label>
+                <input type="text" id="father" name="fathername" required>
+            </div>
+
+            <div class="form-group">
+                <label for="id">ID Number:</label>
+                <input type="text" id="idnum" name="id" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="output" id="display">
+            <h3>Submitted Information:</h3>
+            <p>Student Name: <span id="outName"></span></p>
+            <p>Father Name: <span id="outFather"></span></p>
+            <p>ID Number: <span id="outId"></span></p>
+            <p>Age: <span id="outAge"></span></p>
+            <p>Address: <span id="outAddress"></span></p>
+            <p>Phone Number: <span id="outPhone"></span></p>
+        </div>
+    </div>
+
+    <script>
+
+        function addDetail() {
+
+
+            // get input value
+            let fulName = document.getElementById("fullname").value;
+            let fatherName = document.getElementById("father").value;
+            let idNumber = document.getElementById("idnum").value;
+            let age = document.getElementById("age").value;
+            let address = document.getElementById("address").value;
+            let phoneNumber = document.getElementById("phone").value;
+
+
+              // store input value
+            document.getElementById("outName").textContent = fulName;
+            document.getElementById("outFather").textContent = fatherName;
+            document.getElementById("outId").textContent = idNumber;
+            document.getElementById("outAge").textContent = age;
+            document.getElementById("outAddress").textContent = address;
+            document.getElementById("outPhone").textContent = phoneNumber;
+              
+            //display on website page outsection
+            document.getElementById("display").style.display = "block";
+
+
+            //clean all input
+            document.getElementById("fullname").value = " ";
+            document.getElementById("father").value = " ";
+            document.getElementById("idnum").value = " ";
+            document.getElementById("age").value = " ";
+            document.getElementById("address").value = " ";
+            document.getElementById("phone").value = "";
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>
