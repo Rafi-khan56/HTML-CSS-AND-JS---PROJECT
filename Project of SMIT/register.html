@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #74ebd5, #9face6);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3 class="text-center mb-4">Register</h3>
+    <form id="registerForm">
+      <input type="text" class="form-control mb-3" id="name" placeholder="Full Name" required>
+      <input type="email" class="form-control mb-3" id="email" placeholder="Email" required>
+      <input type="password" class="form-control mb-3" id="password" placeholder="Password" required>
+      <button type="submit" class="btn btn-primary w-100">Create Account</button>
+      <p class="mt-3 text-center">Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      const user = { name, email, password };
+      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('isRegistered', 'true');
+      alert('Registration successful!');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
