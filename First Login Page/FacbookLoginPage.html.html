@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Vailad</title>
+    <style>
+        .main
+         {
+            width: 200px;
+            height: 350px;
+            background-color: blanchedalmond;
+            margin-left: 40%;
+            margin-top: 80px;
+        }
+
+        form 
+        {
+            text-align: center;
+        }
+
+        p 
+        {
+            text-align: center;
+           
+            font-family: sans-serif;
+            font-size: larger;
+            font-weight: 400px;
+        }
+
+        .btn {
+            padding: 10, 20;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 130px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Facbook login </h1>
+        <br>
+        <form>
+            Name <input type="text" name="username" id="uname"  placeholder="Enter your name">
+            <br><br><br>
+            password <input type="password" name="password" id="upass"   placeholder="password">
+            <br><br><br>
+            <input type="submit" name="Login" onclick=" return login()" class="btn">
+
+            <p id="result"></p>
+        </form>
+    </div>
+
+
+
+
+    <script>
+
+        function login() {
+            var user = document.getElementById("uname").value;
+            var pass = document.getElementById("upass").value;
+            var check = user == "rafi" && pass == 12345 ? ("Successful ") : ("Wrong passsword");
+            document.getElementById("result").innerText = check;
+            return false
+
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
